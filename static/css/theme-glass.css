@@ -1,0 +1,216 @@
+/* MAIN */
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  background: url('../img/bg1.jpg') top right no-repeat; background-attachment:fixed;
+
+  background-repeat: no-repeat;
+  font-family:  'Lato', 'Open Sans', Helvetica,Arial,sans-serif;
+  color: #122D43;
+}
+
+h3 {
+  color: #2a6496;
+}
+
+a {
+  color: #2a6496;
+}
+
+a h3:hover {
+    color: #122D43;
+  text-decoration: none;
+  -o-transition: color 0.5s linear;
+  -moz-transition: color 0.5s linear;
+  -khtml-transition: color 0.5s linear;
+  -webkit-transition: color 0.5s linear;
+  -ms-transition: color 0.5s linear;
+  transition: color 0.5s linear;
+}
+
+.section-title {
+  color: #2a6496 !important;
+}
+
+
+a:hover {
+  color: #122D43;
+  -o-transition: color 0.5s linear;
+  -moz-transition: color 0.5s linear;
+  -khtml-transition: color 0.5s linear;
+  -webkit-transition: color 0.5s linear;
+  -ms-transition: color 0.5s linear;
+  transition: color 0.5s linear;
+}
+
+a:hover, a:focus {
+text-decoration: none !important;
+}
+
+.panel-hover p {
+  color: #122D43;
+}
+
+@media screen and (min-width: 768px) {
+  .main-headline {
+  }
+}
+
+#page-portfolio {
+  background: transparent;
+}
+
+
+/* NAVBAR */
+
+.main-headline {
+  font-family: 'Lato';
+  display: inline-block;
+}
+
+.navbar-default {
+  background-color: rgba(0,0,0,0.3);
+}
+
+.navbar-default .navbar-collapse, .navbar-default .navbar-form, .navbar-default .navbar-collapse, .navbar-default .navbar-form {
+  border-color: transparent !important;
+}
+
+.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+  background: transparent !important;
+  border-color: #FFF;
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: #FFF;
+}
+
+.navbar-default {
+  border-color: transparent !important;
+}
+
+.navbar-default .navbar-brand {
+  color: #FFF;
+}
+
+.navbar-default .navbar-nav > li > a {
+  color: #FFF;
+}
+
+.navbar-default .navbar-nav > li > a:hover {
+  color: #B9C2DF;
+}
+
+.navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
+  color: #F0F0F0;
+}
+
+.navbar-transparent {
+  border-color: transparent !important;
+}
+
+.navbar-transparent .navbar-nav > .active > a, .navbar-transparent .navbar-nav > .active > a:hover, .navbar-transparent .navbar-nav > .active > a:focus {
+  background-color: transparent !important;
+}
+
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+  color: #B9C2DF;
+  background-color: transparent;
+}
+
+
+
+
+/* BUTTONS */
+
+.btn-transparent {
+  background-image: none !important;
+  background-color: transparent !important;
+  font-weight: bold;
+}
+
+.btn-transparent:hover {
+  background-image: none !important;
+  background-color: transparent !important;
+}
+
+/* PANELS */
+.panel-square {
+  height: 20vh;
+  width: 20vh;
+  margin-left: auto;
+  margin-right: auto;
+  background: url('../img/square.jpg');
+  background-size: 100%;
+}
+
+.panel-square-xs {
+  height: 18vh;
+  width: 18vh;
+  margin-left: auto;
+  margin-right: auto;
+  background: url('../img/square.jpg');
+  background-size: 100%;
+}
+
+.panel-hover {
+  border: 1px solid #D0D0D0;
+  -webkit-box-shadow: 10px 10px 69px -9px rgba(0,0,0,0.75);
+  -moz-box-shadow: 10px 10px 69px -9px rgba(0,0,0,0.75);
+  box-shadow: 10px 10px 69px -9px rgba(0,0,0,0.75);
+  background-color: rgba(255,255,255,0.4);
+}
+
+/* FORM OVERWRITES */
+
+.form-classic {
+  margin-bottom: 0px !important;
+  box-shadow: none;
+  -webkit-box-shadow: none;
+  border: 1px solid #D0D0D0;
+}
+
+.form-control,.input-group {
+  margin-bottom: 10px;
+}
+
+/* SECTIONS AND PAGES */
+
+.section-header {
+  text-align: center;
+}
+
+.section-header p {
+  font-size: 1.5em;
+}
+
+.section-title {
+  font-size: 3em;
+  font-weight: 700;
+  letter-spacing: 5px;
+  text-align: center;
+  color: #555;
+  text-transform: uppercase;
+  padding: 20px 0;
+}
+
+.section-subtitle {
+  text-align: center;
+  padding: 30px 0;
+}
+
+.glow {
+  display: inline-block;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: box-shadow;
+  transition-property: box-shadow;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+}
+.glow:hover, .glow:focus, .glow:active {
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
+}

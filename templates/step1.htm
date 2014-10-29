@@ -1,0 +1,45 @@
+<html>
+<head>
+	<link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/bootstrap.css') }}">
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:600,800,400&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
+	<link href='{{ url_for('static', filename='css/style.css') }}' rel='stylesheet' type='text/css'>
+</head>
+<body>
+	<div class="{{ savestatusclass }}">{{ savestatus }}</div>
+	<div class="container">
+		<div class="col-md-4"></div>
+		<div class="col-md-4">
+			<div style="margin-top: 40vh"></div>
+			<h4 class="text-center">Select the Customer</h4>
+			<form id="client_selector" name="client_sel_form" action="/counter" method="post">
+				<select class="form-control" name="client_sel" id="client_select">
+					{% for client in clientlist %}
+					<option value="{{ client }}">{{ client }}</option>
+					{% endfor %}
+				</select>
+				<div class="main-buttons">
+					<button type="submit" class="btn btn-primary"><i class="glyphicon glyphicon-ok-circle"></i></button>
+					<a id="newclient-trigger" class="btn btn-warning"><i class="glyphicon glyphicon-plus-sign"></i></a>
+				</div>
+			</form>
+		</div>
+		<div id="newclient" class="hidden">
+			<div class="col-md-4"></div>
+			<div class="col-md-12">
+				<div class="col-md-4"></div>
+				<div class="col-md-4">
+					<form id="add_client" method="post" action="/addclient">
+						<input type="text" name="newclient" class="form-control" placeholder="New Client Name (ID)">
+						<div class="main-buttons">
+							<button type="submit" class="btn btn-primary"><i class="glyphicon glyphicon-floppy-save"></i></button>
+						</div>
+					</form>
+				</div>
+				<div class="col-md-4"></div>
+			</div>
+		</div>
+		<script src="{{ url_for('static', filename='js/jquery-1.11.1.min.js') }}"></script>
+		<script src="{{ url_for('static', filename='js/bootstrap.js') }}"></script>
+		<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+	</body>
+</html>
