@@ -24,7 +24,7 @@ def specialmatch(strg, search=re.compile(r'[^a-z0-9]').search):
 def remove_extension(s):
 		return s[0:-4]
 
-# class for opening page
+# depreciated
 class CounterManage():
 	def __init__(self):
 		self.inspath = '/home/jin/projects/worklog/'
@@ -201,18 +201,16 @@ class AdditionalTools():
 	# add client function
 	def client_add(self):
 		error = None
-		c = CounterManage()
-		clientslisting = c.clisting()
+		a = AdditionalTools()
+		clientslisting = a.clisting()
 		if request.method == 'POST':
 			# check post message
 			newclient = request.form['newclient']
 			# put post variable into some other variables
 			csvfile = "%s.csv" % newclient
-			htmlfile = "%s.html" % newclient
 			inifile = "%s.ini" % newclient		
 			# create files
 			os.system("cp %s/db_templates/template.csv %s/db/%s" % (self.inspath, self.inspath, csvfile))
-			os.system("cp %s/db_templates/template.html %s/db/%s" % (self.inspath, self.inspath, htmlfile))
 			os.system("cp %s/db_templates/template.ini %s/db/%s" % (self.inspath, self.inspath, inifile))
 			# render success page
 			return render_template('step1.htm', clientlist=clientslisting,savestatus="Saved properly!",savestatusclass="alert alert-success")
@@ -262,6 +260,13 @@ class AdditionalTools():
 				work_month_time = int(work_month_time) + delta_month.seconds
 		work_month_human = int(work_month_time)
 		return work_month_human
+	
+	# list clients
+	def clisting(self):
+		csvfiles = glob.glob('%s/db/*.csv' % self.inspath)
+		csvlisting = [os.path.basename(x) for x in csvfiles]
+		clientslisting = [remove_extension(s) for s in csvlisting]
+		return clientslisting
 		
 # Pages routing
 @app.route('/')
