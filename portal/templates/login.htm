@@ -1,0 +1,29 @@
+{% extends "layout.htm" %}
+{% block content %}
+	<div class="{{ savestatusclass }}">{{ savestatus }}</div>
+
+		<div class="col-md-4"></div>
+		<div class="col-md-4">
+			<div style="margin-top: 30vh"></div>
+			<h3 class="text-center">Keios Worklog Customer Panel</h3>
+			<h4 class="text-center">Please login</h4>
+  {% for message in form.email.errors %}
+    <div class="flash">{{ message }}</div>
+  {% endfor %}
+   
+  {% for message in form.password.errors %}
+    <div class="flash">{{ message }}</div>
+  {% endfor %}
+   
+  <form action="{{ url_for('signin') }}" method=post>
+    {{ form.hidden_tag() }}
+     
+    {{ form.email.label }}
+    {{ form.email(class_="form-control") }}
+     
+    {{ form.password.label }}
+    {{ form.password(class_="form-control") }}
+     <br>
+    {{ form.submit(class_="btn btn-primary btn-full") }}
+  </form>
+{% endblock %}

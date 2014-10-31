@@ -1,0 +1,34 @@
+body {
+font-family: 'Open Sans';
+}
+
+.main-buttons {
+text-align: center;
+margin-top: 10px;
+}
+
+.text-center {
+text-align: center;
+}
+
+.btn-full {
+width: 100%;
+}
+
+.panel-lower {
+margin-top: 5vh
+}
+
+.shadow {
+  -moz-box-shadow:    3px 3px 5px 6px #ccc;
+  -webkit-box-shadow: 3px 3px 5px 6px #ccc;
+  box-shadow:         3px 3px 5px 6px #ccc;
+}
+
+.table-info {
+font-size: 13px;
+}
+
+.text-justify {
+text-align: justify;
+}

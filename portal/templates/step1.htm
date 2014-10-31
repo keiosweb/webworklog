@@ -1,12 +1,5 @@
-<html>
-<head>
-	<link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/bootstrap.css') }}">
-	<link href='http://fonts.googleapis.com/css?family=Open+Sans:600,800,400&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
-	<link href='{{ url_for('static', filename='css/style.css') }}' rel='stylesheet' type='text/css'>
-</head>
-<body>
-	<div class="{{ savestatusclass }}">{{ savestatus }}</div>
-	<div class="container">
+{% extends "layout.htm" %}
+{% block content %}
 		<div class="col-md-4"></div>
 		<div class="col-md-4">
 			<div style="margin-top: 40vh"></div>
@@ -36,10 +29,4 @@
 					</form>
 				</div>
 				<div class="col-md-4"></div>
-			</div>
-		</div>
-		<script src="{{ url_for('static', filename='js/jquery-1.11.1.min.js') }}"></script>
-		<script src="{{ url_for('static', filename='js/bootstrap.js') }}"></script>
-		<script src="{{ url_for('static', filename='js/script.js') }}"></script>
-	</body>
-</html>
+{% endblock %}

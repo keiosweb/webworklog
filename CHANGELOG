@@ -1,0 +1,11 @@
+0.1 - Firt WorkLog. Command line based with csv storage
+
+0.3 - Command line with Mako templating and multiple arguments support.
+
+0.5 - Moved to Flask + Jinja + Twitter Bootstrap
+
+0.55 - Client create, Client signup ready, WorkCount works with CSV
+
+0.6 - Moved to SQLAlchemy. CSV & INI depreciated and not supported.
+
+0.75 - Full WorkCount functionalities added. 

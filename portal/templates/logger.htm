@@ -1,0 +1,108 @@
+{% extends "layout.htm" %}
+{% block content %}
+		<h4 class="text-center">Counting work for <b>{{ company_name }}</b></h4>
+		<p class="text-center">({{ client_name }}, ID: {{ uid }})</p>
+		<br>
+		<div class="col-md-12">
+			
+		<div class="col-md-6">
+		</div>
+		<div class="col-md-6">
+		</div>
+		</div>
+		<div class="col-md-3">
+			<div class="panel panel-primary">
+				<div class="panel-heading"><h5 class="panel-title">Options</h5></div>
+				<div class="panel-body">
+					<form id="client_selector" name="client_sel_form" action="/counter" method="post">
+					<p><button type="submit" value="{{ clientid }}" name="client_sel" class="btn btn-primary text-center btn-full">Refresh</button></p>
+					</form>
+					<p><a href="#" class="btn btn-primary text-center btn-full" disabled>Force addition</a></p>
+					<p><a href="#" class="btn btn-primary text-center btn-full" disabled>Generate Table Link</a></p>
+					<p><a href="#" class="btn btn-warning text-center btn-full" disabled>Change password</a></p>
+					<p><a href="/" class="btn btn-danger text-center btn-full" disabled>Remove client</a></p>
+					<p><a href="/backend" class="btn btn-primary text-center btn-full">Select client</a></p>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-md-6">
+			<div class="panel panel-primary">
+				<div class="panel-heading"><h5 class="panel-title">Counter</h5></div>
+				<div class="panel-body">
+					<p class="text-center">Press the button when you are ready to start the work.<br> When you finish, fill up the description and press the button again. <br>Refresh will update the history table below.</p>
+					<form method="post" action="/count-{{ tbutton }}">
+					<input class="{{ note_class }}" name="worknote" placeholder="What were you doing?" >
+					<br>
+					<p><button type="submit" value="{{ tbutton }}" class="btn {{tbutton_class}} btn-full">{{ tbutton }} working</button></p>
+					</form>
+					<div class="{{ status_class }}">
+					<div class="col-md-6">
+						<p>Started: <b>{{ start_time }}</b></p>
+					</div>
+					<div class="col-md-6">
+						<p>Stopped: <b>{{ stop_time }}</b></p>
+					</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-md-3">
+			<div class="panel panel-primary">
+				<div class="panel-heading"><h5 class="panel-title">Information</h5></div>
+
+				<table class="table table-info">
+					<tr>
+						<td>Time (month):</td> <td><b>{{ total_month_duration }}</b></td>
+					</tr>
+					<tr>
+						<td>Money (month):</td>
+						<td> <b>{{ month_monies }} {{ currency }}</b></td>
+					</tr>
+					<tr>
+						<td>Money (all):</td>
+						<td> <b>{{ monies }} {{ currency }}</b></td>
+					</tr>
+					<tr>
+						<td>Time (all):</td>
+						<td> <b>{{ total_duration }}</b></td>
+					</tr>
+					<tr>
+						<td>Rate:</td>
+						<td> <b>{{ rate }} {{ currency }}</b> / hour</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+		<div class="col-md-12">
+
+			<div class="panel panel-primary">
+				<div class="panel-heading"><h5 class="panel-title">History</h5></div>
+<table class="table">
+			<thead>
+				<tr>
+			
+			<th>Date started</th>
+			<th>Date ended</th>
+			<th>Duration</th>
+			<th>Cost</th>
+			<th>Note</th>			
+			</tr>
+			</thead>
+			<tbody>
+			{% for item in workitems %}
+			<tr>
+			{% for i in item %}
+			<td>{{ i }}</td>
+			{% endfor %}
+			</tr>
+			{% endfor %}
+			</tbody>
+			</table>
+
+
+				</div>
+			</div>
+		</div>
+{% endblock %}
