@@ -1,6 +1,8 @@
 Web Worklog
 --------------
 
+**Link to company repo: http://gitlab.c-call.eu/keios-apps/webworklog**
+
 ####Under development / early alpha version
 
 This is a simple app, written as an earily experiment with Python by one of junior devs.
