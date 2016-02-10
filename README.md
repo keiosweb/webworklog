@@ -1,7 +1,10 @@
 Web Worklog
 --------------
 
-**Link to company repo: http://gitlab.c-call.eu/keios-apps/webworklog**
+### THIS IS A MIRROR
+
+**Main repository with latest version is available at [BitBucket](https://bitbucket.org/keiosweb/webworklog)**
+
 
 ####Under development / early alpha version
 
